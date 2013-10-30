@@ -171,8 +171,8 @@ var EntityOk = function(name) {
 
     update(name);
 };
-var caradocEntityExist = fs.readdirSync(path + '/node_modules/' + 'caradoc-entity');
-var caradocConfigExist = fs.readdirSync(path + '/config/params');
+var caradocEntityExist = fs.existsSync(path + '/node_modules/' + 'caradoc-entity');
+var caradocConfigExist = fs.existsSync(path + '/config/params');
 if((caradocEntityExist) && (caradocConfigExist))
 {
     var entity = require(path + '/node_modules/' + 'caradoc-entity');
