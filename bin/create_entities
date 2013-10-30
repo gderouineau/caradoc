@@ -171,8 +171,9 @@ var EntityOk = function(name) {
 
     update(name);
 };
-
-if((require(path + '/node_modules/' + 'caradoc-entity'))&& (require(path + '/config/params/db').data))
+var caradocEntityExist = fs.readDirSync(path + '/node_modules/' + 'caradoc-entity');
+var caradocConfigExist = fs.readDirSync(path + '/config/params');
+if((caradocEntityExist) && (caradocConfigExist))
     {
         var entity = require(path + '/node_modules/' + 'caradoc-entity');
         var db_info  = require(path + '/config/params/db').data;
