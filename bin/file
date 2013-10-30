@@ -1,0 +1,165 @@
+/*
+ * DEFAULT BUNDLE ROUTE
+ */
+exports.subRoutes = [
+    'exports.get = {'
+    ,   ''
+    ,   '   \'accueil\'  : {'
+    ,   '       controller : \'accueil\','
+    ,   '       action     : \'index\','
+    ,   '       pattern    : \'/\','
+    ,   '       method     : \'GET\''
+    ,   '   },'
+    ,   ''
+    ,   '   \'info\'     : {'
+    ,   '       controller : \'accueil\','
+    ,   '       action     : \'info\','
+    ,   '       pattern    : \'/info\','
+    ,   '       method     : \'GET\''
+    ,   '   }'
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * DEFAULT BUNDLE CONTROLLER
+ */
+exports.controller = [
+    'exports.action = {'
+    ,   ''
+    ,   '   \'index\' : function(req,res) {'
+    ,   ''
+    ,   '       res.render(\'src/welcomeBundle/views/accueil/index\', {title: \"page d\'accueil\"});'
+    ,   ''
+    ,   '   },'
+    ,   ''
+    ,   '   \'info\' : function(req, res) {'
+    ,   ''
+    ,   '       res.render(\'src/welcomeBundle/views/accueil/info\', {title: \"page info\"});'
+    ,   ''
+    ,   '   }'
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * BUNDLE ROUTING FILE
+ */
+exports.routes_config = [
+    ''
+    ,   'exports.get = {'
+    ,   ''
+    ,   '   \'welcome\' : {'
+    ,   '       name    : \'welcomeBundle\','
+    ,   '       pattern : \'/\''
+    ,   '   }'
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * SECURITY FILE
+ */
+exports.security_config = [
+    ''
+    ,   'exports.get = {'
+    ,   ''
+    ,   '   active : false,'
+    ,   ''
+    ,   '   filewalls : {'
+    ,   ''
+    ,   '       member : {'
+    ,   ''
+    ,   '           pattern : \'/member\','
+    ,   '           anonymous : true,'
+    ,   '           user : [\'ROLE_ADMIN\',\'ROLE_MEMBER\']'
+    ,   '       }'
+    ,   ''
+    ,   '   },'
+    ,   ''
+    ,   '   security : {'
+    ,   ''
+    ,   '       form_login : {'
+    ,   '           login_path  : \'/login\','
+    ,   '           login_check : \'/login_check\','
+    ,   '           target      : \'last_page\''
+    ,   ''
+    ,   '       },'
+    ,   ''
+    ,   '       logout : {'
+    ,   '           logout_path : \'/logout\','
+    ,   '           target      : \'/\''
+    ,   '       },'
+    ,   ''
+    ,   '       inscription : {'
+    ,   '           inscription_path  : \'/inscription\','
+    ,   '           inscription_check : \'/inscription_check\','
+    ,   '           target            : \'/\''
+    ,   '       }'
+    ,   '   },'
+    ,   '   '
+    ,   '   user : \'userBundle/entity/user\''
+    ,   ''
+    ,   ''
+    ,   '};'
+    ,   ''
+
+];
+
+/*
+ * PROJECT PARAMETERS
+ */
+exports.project_params = [
+    ''
+    ,   'exports.data = {'
+    ,   ''
+    ,   '   name   : \'applicationName\','
+    ,   '   port   : 3000,'
+    ,   '   env    : \'dev\','
+    ,   '   view   : \'jade\','
+    ,   '   secret : \'ThisTokenIsNotSoSecretYouShouldChangeIt\''
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * MAIL PARAMETERS
+ */
+exports.mail_params = [
+    ''
+    ,   'exports.data = {'
+    ,   ''
+    ,   '       service : \'GMAIL\','
+    ,   '       user    : \'email adress\','
+    ,   '       pass    : \'email password\''
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * SQL PARAMETERS
+ */
+exports.db_params = [
+    ''
+    ,   'exports.data = {'
+    ,   ''
+    ,   '   host     : \'localhost\','
+    ,   '   db       : \'database name\','
+    ,   '   user     : \'user name\','
+    ,   '   pass     : \'password\','
+    ,   '   dialect  : \'mysql\', // can take sqlite and postgre'
+    ,   '   storage  : \'path/to/database.sqlite\''
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * APP FILE
+ */
+exports.app = [
+    ''
+    ,   'var server = require(\'caradoc-server\');'
+    ,   ''
+    ,   'server.start();'
+
+];

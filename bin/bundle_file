@@ -1,0 +1,45 @@
+/*
+ * DEFAULT BUNDLE ROUTE
+ */
+exports.subRoutes = [
+    'exports.get = {'
+    ,   ''
+    ,   '   \'accueil\'  : {'
+    ,   '       controller : \'accueil\','
+    ,   '       action     : \'index\','
+    ,   '       pattern    : \'/accueil\','
+    ,   '       method     : \'GET\''
+    ,   '   },'
+    ,   ''
+    ,   '   \'info\'     : {'
+    ,   '       controller : \'accueil\','
+    ,   '       action     : \'info\','
+    ,   '       pattern    : \'/info\','
+    ,   '       method     : \'GET\''
+    ,   '   }'
+    ,   ''
+    ,   '};'
+];
+
+/*
+ * DEFAULT BUNDLE CONTROLLER
+ */
+exports.controller = [
+    'exports.action = {'
+    ,   ''
+    ,   '   \'index\' : function(req,res) {'
+    ,   ''
+    ,   '       res.render(\'welcomeBundle/views/accueil/index\', {title: \"page d\'accueil\"});'
+    ,   ''
+    ,   '   },'
+    ,   ''
+    ,   '   \'info\' : function(req, res) {'
+    ,   ''
+    ,   '       res.render(\'welcomeBundle/views/accueil/info\', {title: \"page info\"});'
+    ,   ''
+    ,   '   }'
+    ,   ''
+    ,   '};'
+];
+
+

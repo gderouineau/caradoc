@@ -1,0 +1,214 @@
+/*
+ * JADE TEMPLATE
+ */
+exports.jadeLayout = [
+    'doctype 5'
+    , 'html'
+    , '  head'
+    , '    title= title'
+    , '    link(rel=\'stylesheet\', href=\'/public/stylesheets/style.css\')'
+    , '  body'
+    , '    block content'
+];
+
+exports.jadeIndex = [
+    'extends ../layout'
+    , ''
+    , 'block content'
+    , '  h1= title'
+    , '  p Welcome to #{title}'
+];
+
+exports.jadeInfo = [
+    'extends ../layout'
+    , ''
+    , 'block content'
+    , '  h1= title'
+    , '  p Welcome to #{title}'
+];
+exports.jade404 = [
+    'doctype 5'
+    , 'html'
+    , '  head'
+    , '    title= title'
+    , '    link(rel=\'stylesheet\', href=\'/public/stylesheets/style.css\')'
+    , '  body'
+    , '    div'
+    ,  '     p Erreur 404'
+];
+exports.jade401 = [
+    'doctype 5'
+    , 'html'
+    , '  head'
+    , '    title= title'
+    , '    link(rel=\'stylesheet\', href=\'/public/stylesheets/style.css\')'
+    , '  body'
+    , '    div'
+    ,  '     p Erreur 401'
+];
+
+/*
+ * EJS TEMPLATE
+ */
+exports.ejsIndex = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title><%= title %></title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1><%= title %></h1>'
+    , '    <p>Welcome to <%= title %></p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.ejsInfo = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title><%= title %></title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1><%= title %></h1>'
+    , '    <p>Welcome to <%= title %></p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.ejs404 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title><%= title %></title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>Erreur 404</h1>'
+    , '    <p>The page you ask for does not exist.</p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.ejs401 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title><%= title %></title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>Erreur 401</h1>'
+    , '    <p>You are not allowed to see this content.</p>'
+    , '  </body>'
+    , '</html>'
+];
+
+/*
+ * JSHTML TEMPLATE
+ */
+exports.jshtmlLayout = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title> @write(title) </title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    @write(body)'
+    , '  </body>'
+    , '</html>'
+];
+exports.jshtmlIndex = [
+    '<h1>@write(title)</h1>'
+    , '<p>Welcome to @write(title)</p>'
+];
+exports.jshtmlInfo = [
+    '<h1>@write(title)</h1>'
+    , '<p>Welcome to @write(title)</p>'
+];
+exports.jshtml404 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title> @write(title) </title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <div>'
+    , '      <h2>Erreur 404</h2>'
+    , '      <p>The page you ask for does not exist.</p>'
+    , '    </div>'
+    , '  </body>'
+    , '</html>'
+];
+exports.jshtml401 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title> @write(title) </title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <div>'
+    , '      <h2>Erreur 401</h2>'
+    , '      <p>You are not allowed to see this content.</p>'
+    , '    </div>'
+    , '  </body>'
+    , '</html>'
+];
+
+/*
+ * HOGAN TEMPLATE
+ */
+exports.hoganIndex = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title>{{ title }}</title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>{{ title }}</h1>'
+    , '    <p>Welcome to {{ title }}</p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.hoganInfo = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title>{{ title }}</title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>{{ title }}</h1>'
+    , '    <p>Welcome to {{ title }}</p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.hogan404 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title>{{ title }}</title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>404 Error</h1>'
+    , '    <p>The page you ask for does not exist.</p>'
+    , '  </body>'
+    , '</html>'
+];
+exports.hogan401 = [
+    '<!DOCTYPE html>'
+    , '<html>'
+    , '  <head>'
+    , '    <title>{{ title }}</title>'
+    , '    <link rel=\'stylesheet\' href=\'/public/stylesheets/style.css\' />'
+    , '  </head>'
+    , '  <body>'
+    , '    <h1>401 Error</h1>'
+    , '    <p>You are not allowed to see this content.</p>'
+    , '  </body>'
+    , '</html>'
+];
