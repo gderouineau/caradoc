@@ -112,8 +112,8 @@ var EntityOk = function(name) {
          *  remove column that don't exist anymore in the entity
          */
 
-         var existColumns = "DESCRIBE " + params['EntityName'];
-         connection.query(existColumns)
+        var existColumns = "DESCRIBE " + params['EntityName'];
+        connection.query(existColumns)
             .on('error', function(err){
                 console.log("error : " + err);
             })
@@ -138,12 +138,12 @@ var EntityOk = function(name) {
                     }
                 }
             })
-         ;
+        ;
 
-         /*
-          * UPDATE COLUMNS  PROPERTIES
-          *
-          */
+        /*
+         * UPDATE COLUMNS  PROPERTIES
+         *
+         */
         for (var key1 in params) {
 
             if( ( key1.toString().toLowerCase() != 'EntityName'.toString().toLowerCase() )
@@ -171,15 +171,15 @@ var EntityOk = function(name) {
 
     update(name);
 };
-var caradocEntityExist = fs.readDirSync(path + '/node_modules/' + 'caradoc-entity');
-var caradocConfigExist = fs.readDirSync(path + '/config/params');
+var caradocEntityExist = fs.readdirSync(path + '/node_modules/' + 'caradoc-entity');
+var caradocConfigExist = fs.readdirSync(path + '/config/params');
 if((caradocEntityExist) && (caradocConfigExist))
-    {
-        var entity = require(path + '/node_modules/' + 'caradoc-entity');
-        var db_info  = require(path + '/config/params/db').data;
-        exports.do = EntityOk;
-    }
+{
+    var entity = require(path + '/node_modules/' + 'caradoc-entity');
+    var db_info  = require(path + '/config/params/db').data;
+    exports.do = EntityOk;
+}
 else
-    {
-        exports.do = EntityNotOk;
-    }
+{
+    exports.do = EntityNotOK;
+}
