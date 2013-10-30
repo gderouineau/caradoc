@@ -1,7 +1,6 @@
 var fs = require('fs');
 var mysql = require('mysql');
 var path = process.cwd();
-var db_info  = require(path + '/config/params/db').data;
 var connection = mysql.createConnection({
     host     : "localhost",
     user     : "root",
@@ -173,9 +172,10 @@ var EntityOk = function(name) {
     update(name);
 };
 
-if(require(path + '/node_modules/' + 'caradoc-entity'))
+if((require(path + '/node_modules/' + 'caradoc-entity'))&& (require(path + '/config/params/db').data))
     {
         var entity = require(path + '/node_modules/' + 'caradoc-entity');
+        var db_info  = require(path + '/config/params/db').data;
         exports.do = EntityOk;
     }
 else
