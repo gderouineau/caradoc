@@ -1,7 +1,6 @@
 var fs = require('fs');
 var mysql = require('mysql');
 var path = process.cwd();
-var entity = require(path + '/node_modules/' + 'caradoc-entity');
 var db_info  = require(path + '/config/params/db').data;
 var connection = mysql.createConnection({
     host     : "localhost",
@@ -16,7 +15,8 @@ exports.database =  function(){
 
 };
 
-exports.do =  function(name) {
+var EntityNotOK = function(name){};
+var EntityOk = function(name) {
 
     function update(name){
         process.on('exit', function(){
@@ -172,3 +172,13 @@ exports.do =  function(name) {
 
     update(name);
 };
+
+if(require(path + '/node_modules/' + 'caradoc-entity'))
+    {
+        var entity = require(path + '/node_modules/' + 'caradoc-entity');
+        exports.do = EntityOk;
+    }
+else
+    {
+        exports.do = EntityNotOk;
+    }
