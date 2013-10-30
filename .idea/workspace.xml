@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d24afc2c-700d-4e6d-99f8-4d6699e45529" name="Default" comment="adding ignore list">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/create_entities" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/test1.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/bin/test2.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/c_user.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/caradoc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/default.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mail.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/mysql.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/path.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/security.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/server.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/test.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/upload.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Readme.md" afterPath="$PROJECT_DIR$/Readme.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/caradoc" afterPath="$PROJECT_DIR$/bin/caradoc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/mkdirp/package.json" afterPath="$PROJECT_DIR$/node_modules/mkdirp/package.json" />
+    <list default="true" id="d24afc2c-700d-4e6d-99f8-4d6699e45529" name="Default" comment="update entity">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="caradoc.iws" />
@@ -255,12 +236,16 @@
       <created>1383145658278</created>
       <updated>1383145658278</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="update entity">
+      <created>1383146649322</created>
+      <updated>1383146649322</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1278" height="819" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -292,7 +277,8 @@
     </option>
     <MESSAGE value="adding cookie" />
     <MESSAGE value="adding ignore list" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding ignore list" />
+    <MESSAGE value="update entity" />
+    <option name="LAST_COMMIT_MESSAGE" value="update entity" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
