@@ -2,27 +2,20 @@
 
 
 
-```js
-var caradoc = require('caradoc');
-var server  = caradoc.server;
-
-server.start();
-```
 
 ## Installation
 
     $ npm -g install caradoc
-    $ caradoc projectName
+    $ caradoc create:project projectName
 
 
 ## Quick Start
 
- The quickest way to get started with express is to utilize the executable `express(1)` to generate an application as shown below:
 
- Create a bundle: // this option is not create at this moment
+ Create a bundle:
 
     $ cd /path/to/your/project
-    $ caradoc newBundle bundleName
+    $ caradoc create:bundle bundleName
 
  Install dependencies:
 
@@ -31,6 +24,10 @@ server.start();
  Start the server:
 
     $ node app
+
+ Update database
+
+    $ caradoc entity:update entityName
 
 ## Features
 
