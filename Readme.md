@@ -38,10 +38,10 @@
 
 ## Philosophy
 
-    Framework to create web application runing on nodejs
-    with minimal knowlegde on this.
-    create bundle configure your routes in config/routes.js
-    and define the actions for those routes in controller file.
+Framework to create web application runing on nodejs
+with minimal knowlegde on this.
+create bundle configure your routes in config/routes.js
+and define the actions for those routes in controller file.
 
 
 
