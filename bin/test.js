@@ -1,12 +1,6 @@
 var fs = require('fs');
-var mysql = require('mysql');
 var path = process.cwd();
-var connection = mysql.createConnection({
-    host     : "localhost",
-    user     : "root",
-    password : "guillaumed",
-    database : "test"
-});
+
 
 
 exports.database =  function(){
@@ -171,15 +165,16 @@ var EntityOk = function(name) {
 
     update(name);
 };
-var caradocEntityExist = fs.readdirSync(path + '/node_modules/' + 'caradoc-entity');
-var caradocConfigExist = fs.readdirSync(path + '/config/params');
-if((caradocEntityExist) && (caradocConfigExist))
+var caradocEntityExist = fs.existsSync(path + '/node_modules/' + 'caradoc-entity');
+var caradocSQLExist = fs.existsSync(path + '/node_modules/' + 'caradoc-sql');
+if((caradocEntityExist) && (caradocSQLExist))
 {
     var entity = require(path + '/node_modules/' + 'caradoc-entity');
-    var db_info  = require(path + '/config/params/db').data;
+    var connection  = require(path + '/node_modules/' + 'caradoc-sql');
     exports.do = EntityOk;
 }
 else
 {
     exports.do = EntityNotOK;
 }
+
