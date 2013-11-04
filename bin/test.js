@@ -1,180 +1,147 @@
-var fs = require('fs');
-var path = process.cwd();
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var exec = require('child_process').exec
+    , program = require('commander')
+    , mkdirp = require('mkdirp')
+    , os = require('os')
+    , fs = require('fs')
+    , file = require('./bundle_file')
+    , style = require('./style')
+    , view = require('./view')
+    ;
+
+exports.do = function(name) {
+
+    var path = '.';
+
+    var eol = os.EOL;
+
+    /**
+     * PROJECT FILES
+     */
+    var Routes = [
+        'exports.get = {'
+        ,   ''
+        ,   '   \'index\'  : {'
+        ,   '       controller : \''+name+'\','
+        ,   '       action     : \'index\','
+        ,   '       pattern    : \'/'+name+'\','
+        ,   '       method     : \'GET\''
+        ,   '   }'
+        ,   ''
+        ,   '};'
+    ].join(eol);
+
+    var controller = [
+        'exports.action = {'
+        ,   ''
+        ,   '   \'index\' : function(req,res) {'
+        ,   ''
+        ,   '       res.render(\'src/'+name+'Bundle/views/'+name+'/index\', {title: \"page d\'accueil du bundle '+name+'\"});'
+        ,   ''
+        ,   '   }'
+        ,   ''
+        ,   '};'
+    ].join(eol);
+
+    var jade = [
+        'doctype 5'
+        , 'html'
+        , '  head'
+        , '    title= title'
+        , '    link(rel=\'stylesheet\', href=\'/public/stylesheets/style.css\')'
+        , '  body'
+        , ''
+        , 'block content'
+        , '  h1= title'
+        , '  p Welcome to #{title}'
+    ].join(eol);
 
 
 
-exports.database =  function(){
-
-
-};
-
-var EntityNotOK = function(name){};
-var EntityOk = function(name) {
-
-    function update(name){
+    function createApplicationAt(name) {
+        console.log();
         process.on('exit', function(){
             console.log();
-            console.log('   your data base ' +  name );
-            console.log('   was correctly updated');
+            console.log('   your bundle ' +name+'Bundle');
+            console.log('   is available');
             console.log();
         });
+        readAndWrite(name);
+        var path = 'src/'+name+'Bundle';
+        mkdir(path, function(){
 
-        var object = new entity.generate[name]();
+            /**
+             * /public repository and sub-repository
+             */
+            mkdir(path);
+            mkdir(path + '/config');
+            mkdir(path + '/config', function(){
+                write(path + '/config/routes.js', Routes)
+            });
+            mkdir(path + '/controller');
+            mkdir(path + '/controller', function(){
+                write(path + '/controller/'+name+'.js', controller)
+            });
+            mkdir(path + '/entity');
+            mkdir(path + '/views');
+            mkdir(path + '/views/'+name);
+            mkdir(path + '/views/'+name, function(){
+                write(path +'/views/'+name+'/index.jade', jade)
+            });
 
-        var params = object.params;
-
-
-        // FIRST CREATE TABLE IF NOT EXIST
-        var query = "CREATE TABLE IF NOT EXISTS " +  params['EntityName'] + " (";
-
-
-        for (var key in params) {
-            var subParams = params[key];
-            if( ( key.toString().toLowerCase() != 'EntityName'.toString().toLowerCase() )
-                ){
-                query += " " + key + " ";
-                for( var subKey in subParams){
-                    query += subParams[subKey] +  " ";
-                }
-                query += ",";
-            }
-
-        }
-        query = query.slice(0, query.length -2);
-        query += ")";
-        query += "ENGINE=MyISAM DEFAULT CHARSET=utf8 ;";
-        connection.query(query)
-            .on('error', function(err){
-
-            })
-            .on('result', function(res){
-
-            })
-            .on('end', function(){
-                console.log('create ok');
-            })
-        ;
-
-        /*
-         *  ALTER TABLE WITH ALL COLUMN AND PARAMETERS
-         *
-         *
-         *
-         *
-         */
-        var pKey = "";
-        var place = "";
-        for (var key1 in params) {
-
-            if( ( key1.toString().toLowerCase() != 'EntityName'.toString().toLowerCase() )
-                ){
-                (function(currentKey, previousKey){
-                    var existColumn = "SHOW COLUMNS FROM " + params['EntityName'] + " WHERE FIELD=\'" + currentKey + "\'";
-
-                    connection.query(existColumn, function(err, result){
-
-                        if(result){
-
-                            var subParams1 = params[currentKey];
-                            if(pKey == ""){
-                                place = FIRST;
-                            }
-                            else {
-                                place = " AFTER " + previousKey + "";
-                            }
-                            var query1 = 'ALTER IGNORE TABLE ' + params['EntityName'] + " ADD  " + currentKey + " ";
-
-                            for( var subKey1 in subParams1){
-                                query1 += subParams1[subKey1] +  " ";
-                            }
-                            query1 += place;
-                            console.log(query1);
-                            connection.query(query1, function(err){
-
-
-                            });
-
-                        }
-                    });
-                })(key1, pKey);
-                pKey = key1;
-            }
-        }
-
-
-        /*
-         *  remove column that don't exist anymore in the entity
-         */
-
-        var existColumns = "DESCRIBE " + params['EntityName'];
-        connection.query(existColumns)
-            .on('error', function(err){
-                console.log("error : " + err);
-            })
-
-            .on('result', function(rows){
-
-                var field = rows['Field'].split(" ");
-                var paramValue = [];
-                var compteur = 0;
-                for(key in params){
-                    paramValue[compteur] =  key;
-                    compteur++;
-                }
-                for( var i = 0 ; i < field.length; i++){
-                    console.log(field[i]);
-                    if(paramValue.indexOf(field[i]) ==  (-1)){
-                        var query = "ALTER TABLE " + params['EntityName'] + " DROP " + field[i];
-                        console.log(query);
-                        connection.query(query , function(err){
-                            if(err){ console.log(err);}
-                        });
-                    }
-                }
-            })
-        ;
-
-        /*
-         * UPDATE COLUMNS  PROPERTIES
-         *
-         */
-        for (var key1 in params) {
-
-            if( ( key1.toString().toLowerCase() != 'EntityName'.toString().toLowerCase() )
-                ){
-                (function(currentKey){
-
-                    var subParams1 = params[currentKey];
-
-                    var query1 = 'ALTER IGNORE TABLE ' + params['EntityName'] + " MODIFY  " + currentKey + " ";
-
-                    for( var subKey1 in subParams1){
-                        query1 += subParams1[subKey1] +  " ";
-                    }
-                    query1 += place;
-                    console.log(query1);
-                    connection.query(query1, function(err){
-
-
-                    });
-
-                })(key1);
-            }
-        }
+        });
     }
 
-    update(name);
-};
-var caradocEntityExist = fs.existsSync(path + '/node_modules/' + 'caradoc-entity');
-var caradocSQLExist = fs.existsSync(path + '/node_modules/' + 'caradoc-sql');
-if((caradocEntityExist) && (caradocSQLExist))
-{
-    var entity = require(path + '/node_modules/' + 'caradoc-entity');
-    var connection  = require(path + '/node_modules/' + 'caradoc-sql');
-    exports.do = EntityOk;
-}
-else
-{
-    exports.do = EntityNotOK;
-}
+    /**
+     * echo str > path.
+     *
+     * @param {String} path
+     * @param {String} str
+     */
 
+    function write(path, str) {
+        fs.writeFile(path, str);
+        console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+    }
+
+    function readAndWrite(path){
+        fs.readFile('config/routes.js', function (err, data) {
+            if (err)  console.log(err);
+            var newData = [
+                ,   '   exports.get = {'
+                ,   ''
+                ,   '   \''+path+'\' : {'
+                ,   '       name    : \''+path+'Bundle\','
+                ,   '       pattern : \'/\''
+                ,   '   },'
+                ,   ''
+                ,   '};'].join(eol);
+            var myfile = data.toString().replace("exports.get = {", newData);
+            fs.writeFile('config/routes.js', myfile, function(err){
+                if(err) console.log('err');
+            });
+        });
+    }
+    /**
+     * Mkdir -p.
+     *
+     * @param {String} path
+     * @param {Function} fn
+     */
+
+    function mkdir(path, fn) {
+        mkdirp(path, 0755, function(err){
+            if (err) throw err;
+            console.log('   \033[36mcreate\033[0m : ' + path);
+            fn && fn();
+        });
+    }
+
+
+    createApplicationAt(name);
+};
