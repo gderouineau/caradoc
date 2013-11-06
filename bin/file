@@ -117,7 +117,8 @@ exports.project_params = [
     ,   '   port   : 3000,'
     ,   '   env    : \'dev\','
     ,   '   view   : \'jade\','
-    ,   '   secret : \'ThisTokenIsNotSoSecretYouShouldChangeIt\''
+    ,   '   secret : \'ThisTokenIsNotSoSecretYouShouldChangeIt\','
+    ,   '   cluster: false
     ,   ''
     ,   '};'
 ];

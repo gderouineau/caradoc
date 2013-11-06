@@ -1,0 +1,56 @@
+doctype 5
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/public/stylesheets/bootstrap.css')
+        link(rel='stylesheet', href='/public/stylesheets/style.css')
+    body
+        div(class="row-fluid body")
+            div(class="span12")
+                div(class="row")
+                    div(class="span8 offset2")
+                        //- logo && menu
+                        div(class="row-fluid")
+                            div(class="span2")
+                                img(src="/public/images/caradoc_transparent.png", id="logo")
+                            div(class="span8 offset2")
+                                ul(class='nav nav-pills menu')
+                                    li
+                                        a(href="/")
+                                            p Home
+                                    li
+                                        a(href='http://caradoc.fr/documentation')
+                                            p Documentation
+                                    li
+                                        a(href='http://caradoc.fr/tutorial')
+                                            p Tutorial
+                                    li
+                                        a(href='http://caradoc.fr/application')
+                                            p Application
+                                    li
+                                        a(href='http://caradoc.fr/community')
+                                            p Community
+                                    li
+                                        a(href='http://caradoc.fr/FAQ')
+                                            p FAQ
+                        //- content
+                        div(class="row-fluid")
+
+                            block content
+
+                        //- footer
+                        div(class="row-fluid footer")
+                            div(class="span8 offset2")
+                                ul(class='nav nav-pills menu text-center')
+                                    li(class="span3 text-center")
+                                        a(href="/http://caradoc.fr/about" )
+                                            p about
+                                    li(class="span3 text-center")
+                                        a(href='http://caradoc.fr/faq')
+                                            p faq
+                                    li(class="span3 text-center")
+                                        a(href='http://caradoc.fr/contact')
+                                            p contact
+                                    li(class="span3 text-center")
+                                        a(href='http://caradoc.fr/licence')
+                                            p licence

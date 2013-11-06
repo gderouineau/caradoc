@@ -1,0 +1,40 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div(class="row-fluid")
+
+            div(class="span8")
+                h3 Mail configuration
+                form(action="/configuration/mail_check" , method='POST')
+                    fieldset
+                        label service
+                        select( name="service" )
+                            option(value="gmail") gmail
+                            option(value="DynectEmail") DynectEmail
+                            option(value="hot.ee") hot.ee
+                            option(value="Hotmail") Hotmail
+                            option(value="iCloud") iCloud
+                            option(value="mail.ee") mail.ee
+                            option(value="Mail.Ru") Mail.Ru
+                            option(value="Mailgun") Mailgun
+                            option(value="Mailjet") Mailjet
+                            option(value="Mandrill") Mandrill
+                            option(value="Postmark") Postmark
+                            option(value="QQ") QQ
+                            option(value="QQex") QQex
+                            option(value="SendGrid") SendGrid
+                            option(value="SES") SES
+                            option(value="Yahoo") Yahoo
+                            option(value="yandex") yandex
+                            option(value="Zoho") Zoho
+
+                        label email
+                        input(type="text", name="email", placeholder="email")
+                        label password
+                        input(type="password", name="password", placeholder="********")
+                        button(class="btn btn-large btn-block btn-primary", type="submit") Next
+
+                form(action="/configuration/done")
+
+                    button(class="btn btn-large btn-block ", type="submit") Pass

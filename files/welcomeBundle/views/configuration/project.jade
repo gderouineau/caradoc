@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div(class="row-fluid")
+
+            div(class="span8")
+                h3 Project configuration
+                form(action="/configuration/project_check" method="POST")
+                    fieldset
+                        label Application name
+                        input(type="text", name="app", placeholder="app name")
+                        label default port
+                        input(type="text", name="port", placeholder="3500")
+                        label render
+                        input(type="text", name="render", placeholder="jade")
+                        label secret
+                        input(type="text", name="secret", placeholder="ThisTokenIsNotSoSecret")
+                        button(class="btn btn-large btn-block btn-primary", type="submit") Next
+
+                form(action="/configuration/sql")
+
+                    button(class="btn btn-large btn-block ", type="submit") Pass

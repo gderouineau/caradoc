@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div(class="row-fluid")
+
+            div(class="span8")
+                h3 SQL configuration
+                form(action="/configuration/sql_check", method="POST")
+                    fieldset
+                        label type
+                        input(type="text", name="dialect", placeholder="mysql sqlite ...")
+                        label host
+                        input(type="text", name="host", placeholder="localhost")
+                        label database name
+                        input(type="text", name="db", placeholder="database")
+                        label user name
+                        input(type="text", name="user", placeholder="user name")
+                        label password
+                        input(type="password", name="password", placeholder="********")
+                        button(class="btn btn-large btn-block btn-primary", type="submit") Next
+
+                form(action="/configuration/mail")
+
+                    button(class="btn btn-large btn-block ", type="submit") Pass

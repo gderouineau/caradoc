@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Tutorial
+        br
+        h5 Run the app
+        br
+        pre
+            code $ cd /path/to/your/project
+            p
+            code node app
+
+        br
+        p=exception
+
+        br
+
+        form(action=next)
+            button(class="btn btn-large btn-block btn-primary", type="submit") Next
+        form(action=previous)
+            button(class="btn btn-large btn-block", type="submit") Previous

@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Welcome !
+        br
+        p
+        .line Welcome in your new Caradoc project
+        .line This script will guide you throw the configuration of your project
+        br
+        p=exception
+
+        br
+        br
+        br
+        form(action="/configuration/project")
+            button(class="btn btn-large btn-block btn-primary ", type="submit") Start Configuration now
+        form(action="/tutorial/1")
+            button(class="btn btn-large btn-block ", type="submit") See a quick tutorial
+        form(action="/demo")
+            button(class="btn btn-large btn-block ", type="submit") See a demonstration

@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Congratulations !
+        br
+        p
+        .line You finish configure your new caradoc project
+        .line You can start using it
+        .line
+        br
+        .line If you want you can read the
+        a(href="/tutorial/1") tutorial
+        br
+        .line or try caradoc by following this
+        a(href="/demo") link
+
+        br
+        br
+        br
+        form(action="/demo")
+            button(class="btn btn-large btn-block ", type="submit") See Demo

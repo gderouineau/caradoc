@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 You finish the tutorial
+        br
+        p
+        .line If you want to read a more complete tutorial
+        a(href='http://caradoc.fr/tutorial') click here
+        br
+        p
+        p
+        .line If you want to read the complte documentation
+        a(href='http://caradoc.fr/documentation') click here
+
+        br
+        p=exception
+
+        br
+        br
+        br
+
+        form(action='/')
+            button(class="btn btn-large btn-block", type="submit") Home

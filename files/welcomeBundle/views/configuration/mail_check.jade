@@ -1,0 +1,31 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div(class="row-fluid")
+
+            div(class="span8")
+                h3 Mail configuration
+                br
+                br
+                br
+                br
+                br
+                p You correctly update your mail configuration
+                p You can change it in /config/params/mail.js
+                br
+                p You will be redirected in 5 seconds
+                br
+                br
+                br
+                br
+
+                form(action="/configuration/done" , method='GET')
+                    button(class="btn btn-large btn-block btn-primary", type="submit") Next
+
+    script.
+        function redirect(){
+            window.location = '/configuration/done';
+        }
+
+        setTimeout(redirect, 5000);

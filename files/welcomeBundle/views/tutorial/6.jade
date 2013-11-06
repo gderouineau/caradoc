@@ -1,0 +1,26 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Tutorial
+        br
+        h5 create your view
+        br
+        p You can add a layout in views
+        br
+        p place your view in a new repository inside view
+        br
+        p To call them in your controller
+        pre
+            code res.render('/src/views/repoName/templateName');
+
+        br
+        p=exception
+
+        br
+
+        form(action=next)
+            button(class="btn btn-large btn-block btn-primary", type="submit") Next
+        form(action=previous)
+            button(class="btn btn-large btn-block", type="submit") Previous

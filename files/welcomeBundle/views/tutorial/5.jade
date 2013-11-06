@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Tutorial
+        br
+        h5 Setup your new bundle
+        br
+        p Your new bundle is in src repository
+        h5 /src/nameBundle/config
+            h6 routes.js
+            h6 allow to set up the routes
+                pre
+                    code exports.get = {
+                    p
+                    code      'home' : {
+                    p
+                    code          controller : 'accueil', //name of the controller you want to use
+                    p
+                    code          action     : 'home', //action name
+                    p
+                    code          pattern    : '/', //url you can add parameters by doing /:id
+                    p
+                    code          method     : 'GET' //method can use GET, POST, PUT, DELETE
+                    p
+                    code      },
+                    p
+                    code      'other_action' : {
+                    p
+                    code              ...
+                    p
+                    code      }
+                    p
+                    code };
+            h5 /src/nameBundle/controller
+            h6 accueil.js
+            h6 allow to define action for each url defines in src/bundle_name/config/routes.js
+                pre
+                    code exports.action = {
+                    p
+                    code      'home' : function(req, res) {
+                    p
+                    code          res.render('bundle_nameBundle/views/accueil/home');
+                    p
+                    code      },
+                    p
+                    code      'other_action' : function(req, res) {
+                    p
+                    code          ...
+                    p
+                    code      }
+                    p
+                    code };
+
+        br
+        p=exception
+
+        br
+
+        form(action=next)
+            button(class="btn btn-large btn-block btn-primary", type="submit") Next
+        form(action=previous)
+            button(class="btn btn-large btn-block", type="submit") Previous

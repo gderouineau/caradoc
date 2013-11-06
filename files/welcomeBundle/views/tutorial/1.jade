@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Welcome to the tutorial
+        br
+        p
+        .line To start press the button bellow
+        .line
+        br
+        p=exception
+
+        br
+        br
+        br
+
+        form(action=next)
+            button(class="btn btn-large btn-block btn-primary", type="submit") Start

@@ -1,0 +1,69 @@
+extends ../layout
+
+block content
+    div(class="span12  container" )
+        div
+        h2 Tutorial
+        br
+        h5 Setup your application
+        br
+        p To do it in an automatic way
+        a(href="/configuration/project") click here
+        br
+        br
+        br
+        p If you want to do it manualy read the following
+        br
+        br
+        h5 /config/params/db.js
+            h6 allow use of postgre, mysql and sqlite database.
+                pre
+                    code exports.data = {
+                    p
+                    code      host     : 'localhost', //set yout host
+                    p
+                    code      db       : 'database name', //set an existing database
+                    p
+                    code      user     : 'user name', //set a user who get access to the database
+                    p
+                    code      pass     : 'password', //set the user password
+                    p
+                    code      dialect  : 'mysql', // can take sqlite and postgre and mysql
+                    p
+                    code      storage  : 'path/to/database.sqlite' // only if you use sqlite
+                    p
+                    code };
+            h5 /config/params/mail.js
+                pre
+                    code exports.data = {
+                    p
+                    code      service : 'GMAIL', // the service use for sending mail
+                    p
+                    code      user    : 'email adress', // your email address
+                    p
+                    code      pass    : 'email password' // your password
+                    p
+                    code };
+            h5 /config/params/project.js
+                pre
+                    code exports.data = {
+                    p
+                    code      name : "applicationName", // the name of your application
+                    p
+                    code      port : 3000, // the running port
+                    p
+                    code      env  : 'dev', // the environment display error in dev
+                    p
+                    code      view : 'jade' // the render engine you nead to install it by running $ npm install renderEngine
+                    p
+                    code };
+
+        br
+        p=exception
+
+        br
+
+        form(action=next)
+            button(class="btn btn-large btn-block btn-primary", type="submit") Next
+        form(action=previous)
+            button(class="btn btn-large btn-block", type="submit") Previous
