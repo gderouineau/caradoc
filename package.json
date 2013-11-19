@@ -1,7 +1,7 @@
 {
   "name": "caradoc",
   "description": "node js framework",
-  "version": "0.2.48",
+  "version": "0.3.4",
   "author": {
     "name": "guillaume derouineau",
     "email": "admin@caradoc.fr"
@@ -10,7 +10,7 @@
     "commander": "1.2.0",
     "range-parser": "0.0.4",
     "mkdirp": "0.3.5",
-    "mysql" : "*",
+    "mysql": "*",
     "ncp": "~0.4.*"
   },
   "keywords": [
@@ -26,12 +26,15 @@
     "caradoc": "./bin/caradoc"
   },
   "readmeFilename": "Readme.md",
-  "_id": "caradoc@0.2.0",
-  "_from": "caradoc@",
+  "_id": "caradoc@0.3.2",
+  "_from": "caradoc@0.3.2",
   "homepage": "http://caradoc.fr",
   "repository": {
     "type": "git",
     "url": "http://github.com/gderouineau/caradoc.git"
+  },
+  "readme": "![caradoc logo](http://f.cl.ly/items/2v0d202T0D3Y271K431Q/caradoc_logo.png)\n\n\n\n\n## Installation\n\n    $ npm -g install caradoc\n    $ caradoc create:project projectName\n\n\n## Quick Start\n\n\n Create a bundle:\n\n    $ cd /path/to/your/project\n    $ caradoc create:bundle bundleName\n\n Install dependencies:\n\n    $ npm install\n\n Start the server:\n\n    $ node app\n\n Update database\n\n    $ caradoc entity:update entityName\n\n## Features\n\n  * Built on [Connect](http://github.com/senchalabs/connect)\n  * create bundle\n  * easy routing managment\n  * Content negotiation\n\n## Philosophy\n\nFramework to create web application runing on nodejs\nwith minimal knowlegde on this.\ncreate bundle configure your routes in config/routes.js\nand define the actions for those routes in controller file.\n\n\n\n\n## License\n\n(The MIT License)\n\nCopyright (c) 2012-2013 g derouineau &lt;admin@caradoc.fr&gt;\n\nPermission is hereby granted, free of charge, to any person obtaining\na copy of this software and associated documentation files (the\n'Software'), to deal in the Software without restriction, including\nwithout limitation the rights to use, copy, modify, merge, publish,\ndistribute, sublicense, and/or sell copies of the Software, and to\npermit persons to whom the Software is furnished to do so, subject to\nthe following conditions:\n\nThe above copyright notice and this permission notice shall be\nincluded in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,\nEXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF\nMERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY\nCLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,\nTORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE\nSOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n",
+  "bugs": {
+    "url": "https://github.com/gderouineau/caradoc/issues"
   }
-
 }

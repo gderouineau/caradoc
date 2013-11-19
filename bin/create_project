@@ -132,13 +132,13 @@ exports.do = function(name) {
                 , private: true
                 , scripts: { start: 'node app.js' }
                 , "dependencies": {
-                    "caradoc-server"  : "~0.1.*",
+                    "caradoc-server"  : "~0.2.*",
                     "caradoc-router"  : "~0.1.*",
-                    "caradoc-security": "~0.1.*",
+                    "caradoc-security": "~0.3.*",
                     "caradoc-sql"     : "~0.1.*",
                     "caradoc-user"    : "~0.1.*",
                     "caradoc-mail"    : "~0.1.*",
-                    "caradoc-entity"  : "~0.1.*",
+                    "caradoc-entity"  : "~0.2.*",
                     "jade"            : "*"
                 }
             };
