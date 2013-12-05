@@ -1,7 +1,7 @@
 {
   "name": "caradoc",
   "description": "node js framework",
-  "version": "0.3.4",
+  "version": "0.3.7",
   "author": {
     "name": "guillaume derouineau",
     "email": "admin@caradoc.fr"
@@ -26,8 +26,8 @@
     "caradoc": "./bin/caradoc"
   },
   "readmeFilename": "Readme.md",
-  "_id": "caradoc@0.3.2",
-  "_from": "caradoc@0.3.2",
+  "_id": "caradoc@0.3.5",
+  "_from": "caradoc@",
   "homepage": "http://caradoc.fr",
   "repository": {
     "type": "git",

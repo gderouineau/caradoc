@@ -131,8 +131,8 @@ exports.mail_params = [
     ,   'exports.data = {'
     ,   ''
     ,   '       service : \'GMAIL\','
-    ,   '       user    : \'email adress\','
-    ,   '       pass    : \'email password\''
+    ,   '       user    : \'download.caraodoc@gmail.com\','
+    ,   '       pass    : \'test1234test\''
     ,   ''
     ,   '};'
 ];

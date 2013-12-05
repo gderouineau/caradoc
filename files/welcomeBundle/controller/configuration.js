@@ -72,9 +72,9 @@ exports.action = {
         if(req.body.service != "")
             readAndWrite('config/params/mail.js', req.body.service, 'GMAIL');
         if(req.body.email != "")
-            readAndWrite('config/params/mail.js', req.body.email, 'email adress');
+            readAndWrite('config/params/mail.js', req.body.email, 'download.caraodoc@gmail.com');
         if(req.body.password != "")
-            readAndWrite('config/params/mail.js', req.body.password, 'email password');
+            readAndWrite('config/params/mail.js', req.body.password, 'test1234test');
 
         if(error){
             res.redirect('/configuration/mail');
